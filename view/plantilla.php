@@ -20,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu" rel="stylesheet" />
     <!-- CSS properties-->
     <link rel="stylesheet" type="text/css" href="view/css/style-login.css" th:href="@{/css/index.css}" />
+    <link rel="stylesheet" type="text/css" href="view/css/style.css" />
 
 
 </head>

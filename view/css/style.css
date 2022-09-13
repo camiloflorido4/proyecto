@@ -1,3 +1,13 @@
+:root{
+    --white: #F5F5F8;
+    --gray: #677791;
+    --violet: #414A98;
+    --red: #FF788C;
+    --green: #60CC64;
+    --blue: #4785EF;
+ }
+
+
 *{
 	box-sizing: border-box;
 	margin: 0;
@@ -60,4 +70,13 @@ nav{
 	width: 75%;
 	height: 100%;
 	float: right;
+}
+
+.site-footer{
+    background-color: #4785EF;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    color: var(--white);
 }
