@@ -4,6 +4,10 @@
         <div class="col-md-6">
           <div class="myLeftCtn">
             <form id="formlogin" class="myForm text-center" action="login.php" method="POST">
+             <?php
+                //$respuesta = new Core_Controlador();
+                //$respuesta -> ingreso_controller();
+            ?>
               <header>Iniciar sesión</header>
               <div class="form-group">
                 <i class="fas fa-user"></i>

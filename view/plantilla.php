@@ -27,9 +27,27 @@
 
 <body>
     <?php
-    /* include "view/modulos/core/header.php"; */
-    include "view/modulos/core/login.php";
-    /* include "view/modulos/core/footer.php"; */
+    if (isset($_SESSION["validarsesion"]) && $_SESSION["validarsesion"] === "ok") {
+
+        echo '<div>';
+        if (isset($_GET["ruta"])) {
+
+            if (
+                $_GET["ruta"] == "inicio" ||
+                $_GET["ruta"] == "productos"
+            ) {
+                include "modulos" . $_GET["ruta"] . ".php";
+            }
+        }
+
+        include "view/modulos/core/footer.php";
+
+        echo '</div>';
+    }else{
+        include "view/modulos/core/login.php";
+    }
+
+
     ?>
 
 
