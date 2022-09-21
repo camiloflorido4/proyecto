@@ -1,11 +1,11 @@
-<?php if(isset($_SESSION["id_user"])){ echo '<script> window.location = "productos"; </script>'; exit();}elseif(isset($_SESSION["userId"])){ echo '<script>window.location = "inicio";</script>'; exit();}?>
+<?php if(isset($_SESSION["userId"])){ echo '<script> window.location = "inicio"; </script>'; exit();}elseif(isset($_SESSION["userId"])){ echo '<script>window.location = "login";</script>'; exit();}?>
 
 <div class="container">
     <div class="myCard">
       <div class="row">
         <div class="col-md-6">
           <div class="myLeftCtn">
-            <form id="formlogin" class="myForm text-center" action="login.php" method="POST">
+            <form id="formlogin" class="myForm text-center" method="POST">
              <?php
                 $respuesta = new Core_Controlador();
                 $respuesta -> ingreso_controlador();
@@ -18,7 +18,7 @@
 
               <div class="form-group">
                 <i class="fas fa-lock"></i>
-                <input class="myInput" type="password" id="ingreso_contrasena" name="ingreso_contrasena" placeholder="Contraseña" required />
+                <input class="myInput" type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required />
               </div>
 
               <input type="submit" class="butt" value="Iniciar sesión" />

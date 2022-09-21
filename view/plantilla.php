@@ -36,7 +36,7 @@
         echo '<div>';
         //encabezado
         include "view/modulos/core/header.php";
-
+        //inicio
         include "view/modulos/core/inicio.php";
             $modulos = new Ruta_Controlador();
             $modulos -> ruta_actual_controlador();
