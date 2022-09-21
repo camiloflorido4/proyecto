@@ -1,6 +1,9 @@
+<?php
+    $GLOBALS["raiz"] = Ruta_Controlador::raiz_controlador();
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,24 +30,26 @@
 
 <body>
     <?php
-    if (isset($_SESSION["validarsesion"]) && $_SESSION["validarsesion"] === "ok") {
+    session_start();
+    if ((isset($_SESSION["userId"]) || isset($_SESSION["id_user"])) && $_SESSION["validar_sesion"] === "ok") {
 
         echo '<div>';
-        if (isset($_GET["ruta"])) {
+        //encabezado
+        include "view/modulos/core/header.php";
 
-            if (
-                $_GET["ruta"] == "inicio" ||
-                $_GET["ruta"] == "productos"
-            ) {
-                include "modulos" . $_GET["ruta"] . ".php";
-            }
-        }
-
+        include "view/modulos/core/inicio.php";
+            $modulos = new Ruta_Controlador();
+            $modulos -> ruta_actual_controlador();
+        //footer
         include "view/modulos/core/footer.php";
 
         echo '</div>';
-    }else{
+
+    } else if ((isset($_SESSION["userId"]) || isset($_SESSION["id_user"])) && $_SESSION["validar_sesion"] === "pendiente"){
         include "view/modulos/core/login.php";
+    } else {
+        $modulos = new Ruta_Controlador();
+        $modulos -> ruta_actual_controlador();
     }
 
 
@@ -53,7 +58,7 @@
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../../assets/js/JQuery/jquery-3.6.0.min.js"></script>
-    <script src="../../assets/js/Popper/popper.min.js"></script>
+    <script src="../../assets/js/Popper/popper.min.js"></script> 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
