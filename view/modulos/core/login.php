@@ -1,4 +1,4 @@
-<?php if(isset($_SESSION["userId"])){ echo '<script> window.location = "inicio"; </script>'; exit();}elseif(isset($_SESSION["userId"])){ echo '<script>window.location = "login";</script>'; exit();}?>
+<?php if(isset($_SESSION["email"])){ echo '<script> window.location = "login"; </script>'; exit();}elseif(isset($_SESSION["email"])){ echo '<script>window.location = "inicio";</script>'; exit();}?>
 
 <div class="container">
     <div class="myCard">
@@ -13,12 +13,12 @@
               <header>Iniciar sesión</header>
               <div class="form-group">
                 <i class="fas fa-user"></i>
-                <input class="myInput" type="text" placeholder="Nombre de usuario" id="ingreso_correo" name="ingreso_correo" required />
+                <input class="myInput" type="text" placeholder="Correo Electronico" id="ing_email" name="ing_email" required />
               </div>
 
               <div class="form-group">
                 <i class="fas fa-lock"></i>
-                <input class="myInput" type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required />
+                <input class="myInput" type="password" id="ing_contrasena" name="ing_contrasena" placeholder="contrasena" required />
               </div>
 
               <input type="submit" class="butt" value="Iniciar sesión" />

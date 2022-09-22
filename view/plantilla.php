@@ -24,6 +24,7 @@
     <!-- CSS properties-->
     <link rel="stylesheet" type="text/css" href="view/css/style-login.css" th:href="@{/css/index.css}" />
     <link rel="stylesheet" type="text/css" href="view/css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
 </head>
@@ -31,7 +32,7 @@
 <body>
     <?php
     session_start();
-    if ((isset($_SESSION["userId"]) || isset($_SESSION["id_user"])) && $_SESSION["validar_sesion"] === "ok") {
+    if ((isset($_SESSION["email"]) || isset($_SESSION["email"])) && $_SESSION["validar_sesion"] === "ok") {
 
         echo '<div>';
         //encabezado
@@ -45,7 +46,7 @@
 
         echo '</div>';
 
-    } else if ((isset($_SESSION["userId"]) || isset($_SESSION["id_user"])) && $_SESSION["validar_sesion"] === "pendiente"){
+    } else if ((isset($_SESSION["email"]) || isset($_SESSION["email"])) && $_SESSION["validar_sesion"] === "pendiente"){
         include "view/modulos/core/login.php";
     } else {
         $modulos = new Ruta_Controlador();
@@ -60,6 +61,7 @@
     <script src="../../assets/js/JQuery/jquery-3.6.0.min.js"></script>
     <script src="../../assets/js/Popper/popper.min.js"></script> 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
